@@ -1,0 +1,70 @@
+<mat-sidenav-container class="app-container">
+    <mat-toolbar color="primary" class="app-toolbar">
+        <button mat-icon-button (click)="toggleSidenav()" class="sidenav-toggle">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <div class="logo-section">
+            <img src="https://placehold.co/40x40/1E3B68/FFFFFF?text=L" alt="Gedeon Logo" class="app-logo">
+            <span class="app-title">Gedeon</span>
+        </div>
+
+        <div class="spacer"></div> <div class="top-menu-items">
+        <ng-container *ngFor="let item of topMenuItems">
+            <ng-container *ngIf="!item.children">
+                <button mat-button [routerLink]="item.route">{{ item.label }}</button>
+            </ng-container>
+            <ng-container *ngIf="item.children">
+                <button mat-button [matMenuTriggerFor]="menu">{{ item.label }}</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item *ngFor="let child of item.children" [routerLink]="child.route">
+                        {{ child.label }}
+                    </button>
+                </mat-menu>
+            </ng-container>
+        </ng-container>
+    </div>
+    </mat-toolbar>
+
+    <mat-sidenav #sidenav mode="side" opened class="app-sidenav">
+        <div class="sidenav-content-wrapper">
+            <div class="sidenav-section">
+                <h3 class="sidenav-title">GESTION DES DETTES ET OPPOSITIONS NOTIFIÉES</h3>
+                <p class="sidenav-version">Version 8.03 du 15/10/2024</p>
+            </div>
+
+            <div class="sidenav-section">
+                <h3 class="sidenav-title">PROFIL NATIONAL</h3>
+                <mat-nav-list>
+                    <a mat-list-item *ngFor="let item of sidebarMenuItems" [routerLink]="item.route" class="sidenav-link">
+                        {{ item.label }}
+                    </a>
+                </mat-nav-list>
+            </div>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="app-main-content">
+        <mat-card class="welcome-card">
+            <mat-card-header>
+                <mat-card-title>Bienvenue sur l'application GEDEON.</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                    Cette application RH est destinée aux gestionnaires des CSRH.
+                </p>
+                <p>
+                    En cas de problèmes, veuillez contacter le Support Fonctionnel via Plume : choisir la rubrique Faire une demande, puis Informatique, ensuite Applications.
+                </p>
+                <p>
+                    <a href="https://example.com/portail-plume" target="_blank" class="portal-link">Portail Plume</a>
+                </p>
+                <p class="expiration-info">
+                    [ Expiration du mot de passe le 10/04/2025 à 16:35 ]
+                </p>
+            </mat-card-content>
+        </mat-card>
+
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

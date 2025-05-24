@@ -1,47 +1,29 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject,  OnInit, ViewChild  } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service'; // Adjusted path
-
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
-  standalone: true, // Ensure this is present for standalone components
-  imports: [],
-  template: `
-    <div class="home-container">
-      <h2>Welcome to the Home Page!</h2>
-      <p>You are successfully logged in.</p>
-      <button (click)="logout()">Logout</button>
-    </div>
-  `,
-  styles: [`
-    .home-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    h2 {
-      color: #333;
-    }
-    p {
-      color: #555;
-      margin-bottom: 20px;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #dc3545;
-      color: white;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #c82333;
-    }
-  `]
+  standalone: true,
+  imports: [ MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatMenuModule,
+    RouterModule,
+    CommonModule],
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
   private authService = inject(AuthService);
@@ -51,4 +33,49 @@ export class HomeComponent {
     this.authService.logout();
     this.router.navigate(['/auth']);
   }
+
+
+  // Reference to the sidenav component for programmatic control
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+
+  // Menu items for the horizontal top bar
+  topMenuItems = [
+    { label: 'Agents', route: '/agents' },
+    { label: 'Tiers', route: '/tiers' },
+    {
+      label: 'Dettes',
+      children: [
+        { label: 'Consultation', route: '/dettes/consultation' },
+        { label: 'Saisie', route: '/dettes/saisie' }
+      ]
+    },
+    { label: 'Consultation', route: '/consultation' },
+    { label: 'Répartition', route: '/repartition' },
+    { label: 'Paiements', route: '/paiements' },
+    {
+      label: 'Outillage',
+      children: [
+        { label: 'Admin', route: '/outillage/admin' },
+        { label: 'Rapports', route: '/outillage/rapports' }
+      ]
+    },
+    { label: 'Aide', route: '/aide' }
+  ];
+
+  // Menu items for the left sidebar
+  sidebarMenuItems = [
+    { label: 'Accueil', route: '/' },
+    { label: 'Déconnexion', route: '/logout' },
+    { label: 'Accessibilité : non conforme', route: '/accessibility' }
+  ];
+
+  ngOnInit() {
+    // Initialization logic if needed
+  }
+
+  // Toggle the sidenav on small screens (optional, if you want a burger menu)
+  toggleSidenav() {
+    this.sidenav.toggle();
+  }
 }
+
