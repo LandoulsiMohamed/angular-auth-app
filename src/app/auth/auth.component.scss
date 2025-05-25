@@ -1,36 +1,214 @@
-.auth-container {
+/* Body et Conteneur principal */
+body {
+  font-family: 'Open Sans', sans-serif; /* Ou Lato, Roboto, Montserrat */
+  background-color: #f9f9f9; /* Arrière-plan général très clair */
+}
+/* Styles pour l'en-tête */
+.header {
+  /* ... (vos styles existants pour l'en-tête, display: flex, align-items, etc.) */
+  display: flex;
+  justify-content: space-between; /* Pour espacer les logos et le titre */
+  align-items: center;
+  margin-top: 40px;
+  padding: 0 40px;
+  background: linear-gradient(to right, #126BB2, #6aafff); /* Exemple de dégradé */
+  height: 80px; /* Augmenter la hauteur de l'en-tête pour accueillir un titre plus grand */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Styles pour le titre "Gestion des Dettes et des Oppositions Notifiées" */
+.header-title h1 {
+  font-family: 'Montserrat', sans-serif; /* Ou une autre police percutante si vous l'avez incluse */
+  font-size: 1.8em; /* Augmenter la taille de la police */
+  font-weight: 700; /* Rendre le texte très gras */
+  color: #FFFFFF; /* Blanc pour contraster avec le fond bleu de l'en-tête */
+  text-align: center; /* Centrer le texte dans son conteneur */
+  margin: 0; /* Supprimer les marges par défaut */
+  flex-grow: 1; /* Permet au titre de prendre l'espace disponible entre les logos */
+  padding: 0 20px; /* Ajouter un peu de padding si les logos sont très proches */
+  white-space: nowrap; /* Empêche le texte de passer à la ligne s'il y a assez d'espace */
+  overflow: hidden; /* Cache le débordement si le texte est trop long */
+  text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est tronqué */
+}
+
+.main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  min-height: calc(100vh - 120px); /* Ajuster selon hauteur header/footer */
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
 }
+
+/* Titres */
+h1 {
+  font-size: 2.2em;
+  color: #333333;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+p.description {
+  font-size: 1.1em;
+  color: #777777;
+  margin-bottom: 40px;
+}
+
+/* Carte de connexion */
+.login-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Ombre plus prononcée */
+  width: 100%;
+  max-width: 400px; /* Largeur maximale pour le formulaire */
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left; /* Alignement des libellés */
+}
+
 label {
-  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555555;
 }
-input {
-  padding: 8px;
+
+input[type="text"],
+input[type="password"] {
+  width: calc(100% - 20px); /* Ajuster padding */
+  padding: 12px 10px;
   border: 1px solid #ddd;
-  border-radius: 3px;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-button {
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #4A90E2; /* Bordure bleue au focus */
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2); /* Léger halo */
+  outline: none;
+}
+
+.btn-primary {
+  background-color: #4A90E2;
+  color: #ffffff;
+  padding: 12px 30px;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
+  font-size: 1.1em;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  width: 100%; /* Bouton pleine largeur */
+  margin-top: 20px;
 }
-button:hover {
-  background-color: #0056b3;
+
+.btn-primary:hover {
+  background-color: #357ABD; /* Bleu plus foncé au survol */
+  transform: translateY(-2px); /* Effet léger de survol */
 }
+
+/* Pied de page léger */
+.footer-text {
+  font-size: 0.9em;
+  color: #999999;
+  margin-top: 30px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.footer-link {
+  color: #4A90E2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: text-decoration 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Dans style.css */
+/* Vous pourriez vouloir ajuster la taille des logos textuels si le titre prend trop de place */
+.app-name {
+  font-size: 1.6em; /* Légèrement plus petit que le titre */
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.group-name {
+  font-size: 0.9em; /* Légèrement plus petit que le texte principal pour le nom du groupe */
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+}
+
+/* Vous pourriez aussi avoir des règles pour .header-title h1 si vous voulez le styliser différemment de la section d'accueil */
+.header-title h1 {
+  font-size: 1.2em; /* Plus petit que le titre d'accueil */
+  color: rgba(255, 255, 255, 0.9); /* Texte légèrement transparent pour un effet subtil */
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Assurez-vous que les règles existantes pour .header sont toujours pertinentes pour l'alignement */
+.header {
+  display: flex;
+  justify-content: space-between; /* Pour espacer les logos et le titre */
+  align-items: center;
+  padding: 0 40px;
+  /* ... (autres styles de l'en-tête) */
+}
+
+
+/* Styles pour le groupe icône + label */
+.label-icon-group {
+  display: flex; /* Active Flexbox pour aligner l'icône et le label */
+  align-items: center; /* Centre verticalement l'icône et le label */
+  margin-bottom: 8px; /* Espace entre le groupe (icône+label) et l'input */
+  color: #555555; /* Couleur du texte du label */
+  font-weight: 500; /* Poids de la police du label */
+}
+
+.label-icon-group .icon {
+  font-size: 1.1em; /* Taille de l'icône */
+  margin-right: 10px; /* Espace entre l'icône et le label */
+  color: #4A90E2; /* Couleur de l'icône (par exemple, votre bleu primaire) */
+}
+
+.label-icon-group label {
+  margin-bottom: 0; /* Annule la marge du label si elle était définie globalement */
+  /* Assurez-vous qu'aucun autre style ne "casse" l'alignement flex ici */
+}
+
+/* Styles pour le wrapper de l'input (si vous avez suivi le HTML proposé) */
+.input-wrapper input {
+  width: calc(100% - 20px); /* Assurez-vous que le padding est bien géré */
+  padding: 12px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.input-wrapper input:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  outline: none;
+}
+
+/* Ajustez si nécessaire la largeur de la zone du logo pour laisser plus de place au titre */
+.logo-gedeon, .logo-la-poste {
+  flex-shrink: 0; /* Empêche les logos de rétrécir si le titre est très long */
+}
+/* Ancienne règle pour le label, si elle était globalement définie, peut être à ajuster ou supprimer */
+/* label {
+    display: block; /* Cette règle peut entrer en conflit avec display: flex; si elle s'applique au label direct dans .label-icon-group.
+                       Assurez-vous que .label-icon-group label écrase ou que la règle générale est moins spécifique.
+} */
+

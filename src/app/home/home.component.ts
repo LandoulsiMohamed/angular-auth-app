@@ -9,11 +9,19 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
+
+// Define a more robust interface for your menu items
+interface MenuItem {
+  label: string;
+  route: string;
+  icon?: string; // Add this optional property for Material icons
+  children?: MenuItem[]; // Optional for top menu items
+}
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ MatToolbarModule,
+  imports: [MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatIconModule,
@@ -55,7 +63,7 @@ export class HomeComponent {
     {
       label: 'Outillage',
       children: [
-        { label: 'Admin', route: '/outillage/admin' },
+        { label: 'Adminqqqqqqqqqqqqqqqqqq', route: '/outillage/admin' },
         { label: 'Rapports', route: '/outillage/rapports' }
       ]
     },
@@ -64,9 +72,9 @@ export class HomeComponent {
 
   // Menu items for the left sidebar
   sidebarMenuItems = [
-    { label: 'Accueil', route: '/' },
-    { label: 'Déconnexion', route: '/logout' },
-    { label: 'Accessibilité : non conforme', route: '/accessibility' }
+    { label: 'Accueil', route: '/', icon: 'money_off' },
+    { label: 'Déconnexion', route: '/logout' , icon: 'gavel'},
+    { label: 'Accessibilité : non conforme', route: '/accessibility' , icon: 'settings'}
   ];
 
   ngOnInit() {

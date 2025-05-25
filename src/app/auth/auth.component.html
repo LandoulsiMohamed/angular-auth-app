@@ -1,14 +1,58 @@
-<div class="auth-container">
-  <h2>Login</h2>
-  <form (submit)="login()">
-    <div>
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gedeon - Bienvenue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/auth.component.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=WcUtbDP_QBKP-jWYbhZp_DvqkAjss04TPvI6-L_cD6NTwUBNOkC3vtWF39XXZX3ajk0iUjZ8IrvBrlWums83WyMszODu94Beg2uPvEevg5GYD7m5qzQcFdJkfBfWcjE515-Wq9QWXZt-LlPF_7ZgDUugABcm-70bvnS1qB6uOUbLwZilWOsDhWX6FbS49SZVb-2xyBNtmKtU5lg-u0T0J3X_-muxHufwa6NJOhf6E9BlaLF6hqPvXaevuiDzebHsLFGXzs6Wwc7rIsnfcO43MTGhxVCKVvWSrYAJtrYCoI7u6oXp3cvksxpFO4A2-AgjPZeFFapHCesdVHXyo4FauD1c_X6TKtobgNrjvFDgaNdRvNbsED6Y913RCQ6qSZozUjdk8zRRI9jj-VYnw7ordiWZQwmsoBnxhrknGghfRvniejfTXZKKrGN-jgKZQ6DmFtt4e_yCkT2x1ARSpZEGqGl3MVaz3pz9q51tUdqdyV-muMa0Udw9qLkAfSZdYF3bJNOZTc_3YShnNyvC7KyDb5EMIzilQ44yhbvXr5A9-PnQOmdypQagqwgK5a-6hDfndrynpZNuJxRSpQjQbTbgrKn-DrpVk_SVaHjFw1i_R1jP-fiOj5II_OwMSrldG2mDZhSQpWISzW5eNYXERj1AQBiyE566EWGu91Ocabp3_UH8N1ogRqZAfrdbIneRpbd-gn0e3f3ONWBbnRqotjj4Ao2kjDRdngrerwIdL-TEdar2hAmbIoxPJGg8kUAEMesY4EOqO-UoWf_cJOE76YOismsJIEm7xJsG0rJ9n3BNl46A6rSeSKR8O6ZNIZ4SltWVZCtjTvgimYdSb9xtuq8dmhAc9P0utOEPGInk1Bkd7cKaNNCxEDqEl1-iEfJ7qiJf4eesn2VWbMToJBhzxtngLwHVrW-_1CbBOh8C6qjWQqLMmdvwG7IsLqv-kZZHEzplobPNFQOkALmmMM3uy8qDxO71U6QQbD5HaMkhkksW1ly0emobJrKinHUK-5RmZWaZPcOYuue0hcf8kpMte0JJ3xl_V9iuK8aCVremRezlMb6Qp1EZzyPTzlLOqRZCiN5f2hqd-4qECjnImwsW-8E3-v88L91lgnWpKo7c0dx7jhnj8-ZyGitt_cKwO05CAD-iUbE2g-1r44OCJTuBVsWgMAszXWER441HlhSBpDXp0xjO3WycxN9ZDVc0DIq0NNfvscKXZ01YB2xdeADxutlpjgQi8420gFwrVk7uCMFbbbBDzIob6r8Ki451xBIyKHtmShElNSauiJKo3TYS1t_hdonLkmUAMot32SttdvCS8AwOBs1L8dngj9YVon6KT3M-cEhMdp5yiXtAGuiXjIM8UgBf6cxHaMCDM2f_VVOaVUfEmkMZgo8VFORP1yveweGNckPAtu10hUCFglIREf30ZiPxbOlY9Uga4Ndnw1_AgTX3_Mh0uQpSkNgNnSfRzfyDzlZoZ1zFflif-fBWc-DwvcEVek_Zhh5FiOlJ5M0rxQ2UrIeWIyaFgKFzoucRHxdqhR1X21k6_PsqlyfHm6zY2jRDjXyX_OSKlCuQ8txleZGXpGyqz8KRL_HmaoO_bsLGKZgsVlTmnwyd-zF3PwSyGE83iGGOUqIuE2Vw7HZrIZ0fFgAF8sV239NJiQHrY1MhZtZXLfuTVyy-R7ZKcdYiHJk5VJJc6CuSmc6M8W1TAlj9V1H81ExwIooZG59yqxmp9VsN4KlSuedcV8Kl7Fp1FA" nonce="b985d7c6f051caf1a56b426de280f319" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tYWlsLWF0dGFjaG1lbnQuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2F0dGFjaG1lbnQvdS8xLz91aT0yJmlrPTVhNDgxNTQzNzQmYXR0aWQ9MC4xJnBlcm1tc2dpZD1tc2ctZjoxODMyODEzODA0MzU4MzMzNzg1JnRoPTE5NmY3NjcxYzQzNWY1NTkmdmlldz1hdHQmencmZGlzcD1zYWZlJnNhZGRiYXQ9QU5HamRKLTFhYnNsU3BsZVpwQXhXN2Raejc4c0NVeVV6M0t4WkRjZ1h3UkFSWE9PTk0yVjJaVGZ1NmJFeVRFRlhEMnZBb1pwcGxwQ3FnQklRSEZ0RFNuTnoxUDJmYmpNdUxoaEFkb2drb1dGNFprY1lxcExqTkZsY1lYNFdpaDQ0b0FjZXBPV2dWelVDeGE0emVhN1N6dUFGSWJBMGtHS1R3LTRsYjNmS2x5MUhFcXRiX2ROUVZFR05McHBPdmI1NEQ2ZDUyWUNCWlN5RXBONkRfTzBFeHd6clY3V3JDQUNMNXl0TThaWU5lN19uU2tTUW1BakZRR29JN2hUZ3dONURlUTdrQ1lJOG9QYUwwdURTU1o5ZVRoZm9XUEJ4bVktcVBpOTN3bG0wUmJaSGZDUFpCYzhFcHpJa01yWEhWX2REZy1nQkcyZ3U0Ulg4Z0ZXbHEwaVMyVUlDVFNhZDNwWDFpczN2T0ZSZU9lcURyQmRSV3U2TFdZTEIteFYzUFpkMkhDOG1TQkJiTy1UdDBKQS1EYzZxSHNLZ3J5X3dDZkJWV2NIaGowQjQwdzJiWUJjRlJjSjF1eXExZ1BiUDR4QWc1aVNfZGhBdGM3c0g2Qm5iR1J5am0wbjdZWXZ2QmFQYldwWG9KVm0wd2ZPeVk1ZW9sLU1sLUJYWXRteFNUY3FsRjZXZWw3VVgzZU9tTkRLTUtLYmc3d2t4MUtKWURETHlDOVFpRk5udktrUWt6SWJ4R3hudmRNOFljTXlJNE9EcUlDdktCR2MzSDBoWGxFQXpIMU9GQ1VwY2dELW1tZDBjc2dEdmdMT3lWdHZhTElJLUhVZjVjSl9iVVBJNWs1UGN2U0xGYkRjLXlXTTJvNl9tdWxSdDFLZTM1OVUyWFA0UVlJSVhhaGhXZzFwTkwtR2U4cnFOUlRSNGZSVFBtY3lQUk9SajNrVnFOMURhcHROZjFOMk4xTEU1QVZNQTFNa1U1bmtKbFVkNTlUSkNRSFB5Tlc2cXV3VzZKbmJtaTdtTVRJbXhOUWhFT0NuUEVxS3g4OHVnRnpVandMamJncG1HMlBxTXlwNHM3ZURHUkZBNmlhMlJoZmZxVE1aSVJyX0ZoMGtoT1pBYVBQbmhQYjlrYzRjOXM1T0JxOFp6UTA1dzNfZ1Z1Y292T2VmWmlIRk5fVm85WklEZ1lkRTQwU3VSZ1pSdTNGMHFXOWJpM2pIUTlTYTR0bEJuTXVDdXVtNXYzSmIzTnQ3aFFwQlNValZLdFN3c0VkU1BzdjNZMmJvNWhIY3pOWmhONzlNQk82T3ZGU09pOXltWEJvemdnTl9kRnZFSjJKbkVRSElKdWZBenFoVzMzTEtsR25TN2c4WVZjT0xPMmJqeXpva2NKQ2oyejI1Z0JYME1FY1RBeDYzYlFkUUNCX003b2Iwb1RNTFotU0FNbU9CdlZyLXpGSnFoQzRlYkU2Mjg5UjU5SXdRNGJsVQ"/></head>
+<body>
+
+<header class="header">
+    <div class="logo-gedeon">
+        <img src="/assets/images/img.png" class="app-logo">
     </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+    <div class="header-title">
+        <h1>Gestion des Dettes et des Oppositions Notifiées</h1>
     </div>
-    <button type="submit">Login</button>
-  </form>
-</div>
+    <div class="logo-la-poste">
+        <span class="group-name">GROUPE LA POSTE</span>
+    </div>
+</header>
+
+<main class="main-content">
+    <div class="welcome-section">
+        <h2>Bienvenue sur l'application GEDEON.</h2>
+        <p class="app-description">Cette application RH est destinée aux gestionnaires des CSRH.</p>
+    </div>
+
+    <div class="login-card">
+        <form (submit)="login()">
+            <div class="form-group">
+                <div class="label-icon-group"> <i class="fas fa-user icon"></i> <label for="username">Identifiant</label></div>
+                <div class="input-wrapper"> <input type="text" id="username" name="username" placeholder="Saisissez votre identifiant" required></div>
+            </div>
+
+            <div class="form-group">
+                <div class="label-icon-group"><i class="fas fa-lock icon"></i><label for="password">Mot de passe</label></div>
+                <div class="input-wrapper"><input type="password" id="password" name="password" placeholder="Saisissez votre mot de passe" required></div>
+            </div>
+
+            <button type="submit" class="btn-primary">Valider</button>
+        </form>
+    </div>
+
+    <div class="help-section">
+        <p class="footer-text">
+            En cas de problèmes, veuillez contacter le Support Fonctionnel via Plume :
+            choisir la rubrique "Faire une demande", puis "Informatique", ensuite "Applications".
+        </p>
+        <a href="URL_DU_PORTAIL_PLUME" class="footer-link" target="_blank" rel="noopener noreferrer">Portail Plume</a>
+    </div>
+</main>
+
+</body>
+</html>
